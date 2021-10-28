@@ -8,6 +8,30 @@
   </div>
 </template>
 
+<script>
+export default {
+  name:"App",
+  data(){
+    return {
+
+    }
+  },
+  mounted(){
+    this.init()
+  },
+  methods:{
+    init(){
+      this.$get('/posts').then(res => {
+        console.log(res)
+      })
+      // this.$axios('http://jsonplaceholder.typicode.com/posts').then(res => {
+      //   console.log(res)
+      // })
+    }
+  }
+}
+</script>
+
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
